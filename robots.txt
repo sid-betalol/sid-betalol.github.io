@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://sid-betalol.github.io/sitemap.xml
