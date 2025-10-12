@@ -20,6 +20,7 @@ Built GPT-2 from scratch and enhanced it with modern architectural improvements 
 ### Core GPT-2 Architecture
 
 **Implemented from scratch**:
+
 - Multi-head self-attention mechanism
 - Position-wise feedforward networks
 - Layer normalization and residual connections
@@ -29,16 +30,19 @@ Built GPT-2 from scratch and enhanced it with modern architectural improvements 
 ### Architectural Enhancements
 
 **1. Rotary Positional Embeddings (RoPE)**
+
 - Replaced absolute positional encodings with **rotational embeddings**
 - Improved length extrapolation capabilities
 - Better handling of relative positions
 
 **2. Group Query Attention (GQA)**
+
 - Reduced memory footprint vs. Multi-Head Attention
 - Maintained model quality with fewer parameters
 - Enabled larger context windows with same memory budget
 
 **3. Sliding Window Attention**
+
 - Limited attention to local context window
 - Improved computational efficiency for long sequences
 - Reduced O(n²) complexity for attention computation
@@ -48,16 +52,19 @@ Built GPT-2 from scratch and enhanced it with modern architectural improvements 
 ### Efficient Training Pipeline
 
 **Multi-GPU Support**:
+
 - Integrated **Hugging Face Accelerate** for distributed training
 - Seamless CPU/GPU switching without code changes
 - Mixed precision training for faster computation
 
 **Experiment Tracking**:
+
 - Weights & Biases integration for experiment logging
 - Real-time training metrics visualization
 - Hyperparameter sweep support
 
 **Flexible Data Loading**:
+
 - Custom data loaders for various text formats
 - Efficient tokenization and batching
 - Support for streaming large datasets
@@ -66,12 +73,12 @@ Built GPT-2 from scratch and enhanced it with modern architectural improvements 
 
 ### Efficiency Gains
 
-| Configuration | Memory (GB) | Throughput (tok/s) | Perplexity |
-|--------------|-------------|-------------------|------------|
-| Standard GPT-2 | 12.4 | 8.2K | 24.3 |
-| + RoPE | 12.4 | 8.1K | 23.8 |
-| + GQA | 9.2 | 10.5K | 24.1 |
-| + Sliding Window | 7.8 | 12.3K | 24.5 |
+| Configuration    | Memory (GB) | Throughput (tok/s) | Perplexity |
+| ---------------- | ----------- | ------------------ | ---------- |
+| Standard GPT-2   | 12.4        | 8.2K               | 24.3       |
+| + RoPE           | 12.4        | 8.1K               | 23.8       |
+| + GQA            | 9.2         | 10.5K              | 24.1       |
+| + Sliding Window | 7.8         | 12.3K              | 24.5       |
 
 ### Key Takeaways
 
@@ -97,7 +104,7 @@ class GroupQueryAttention(nn.Module):
         self.n_kv_heads = n_kv_heads
         self.head_dim = d_model // n_heads
         # ... implementation
-        
+
 class RotaryEmbedding(nn.Module):
     """RoPE for better positional encoding"""
     def __init__(self, dim, max_seq_len=2048):

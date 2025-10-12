@@ -68,7 +68,7 @@ Replaces one-hot encodings with soft labels weighted by hierarchical distance:
 
 $$\mathcal{L}_{soft} = -\sum_{A \in \mathcal{C}} y_A^{soft}(C) \log p(A)$$
 
-where 
+where
 
 $$y_A^{soft}(C) = \frac{\exp(-\beta d(A,C))}{\sum_{B \in \mathcal{C}} \exp(-\beta d(B,C))}$$
 
@@ -77,12 +77,14 @@ $$d(A,C) = \frac{height(LCA)}{height(tree)}$$
 ## Experimental Setup
 
 **Baseline Validation**:
+
 - Datasets: MNIST, CIFAR-10
 - Architectures: MLP, ResNet18
 - Loss Functions: MSE Loss, Cross-Entropy Loss
 - Goal: Replicate NC emergence patterns from literature
 
 **Hierarchical Extension**:
+
 - Constructed semantic hierarchy for CIFAR-10 classes
 - Implemented both HXE and soft label approaches
 - Compared NC metrics against standard training
@@ -108,6 +110,7 @@ The goal is to not only minimize classification errors but also minimize their s
 ### Baseline Replication ✓
 
 Successfully replicated NC emergence patterns consistent with literature:
+
 - All four NC metrics converge toward zero during extended training
 - Behavior consistent across MLP and ResNet18 architectures
 - Both MSE and Cross-Entropy losses exhibit NC characteristics
@@ -115,11 +118,13 @@ Successfully replicated NC emergence patterns consistent with literature:
 ### Hierarchical Loss Investigation (In Progress)
 
 The hierarchical loss experiments are under active development. Initial implementation complete for:
+
 - Class hierarchy construction for CIFAR-10
 - HXE and soft label loss functions
 - Integrated training pipeline
 
 **Pending Work**:
+
 - Complete training runs for hierarchical models
 - Compute NC metrics for hierarchical loss functions
 - Statistical comparison of NC emergence patterns
@@ -136,6 +141,7 @@ The hierarchical loss experiments are under active development. Initial implemen
 **Framework**: PyTorch
 
 **Key Components**:
+
 - Custom NC metric computation (NC1-NC4)
 - Hierarchical loss implementations (HXE, Soft Labels)
 - Class hierarchy construction utilities
@@ -151,9 +157,9 @@ The hierarchical loss experiments are under active development. Initial implemen
 
 ## References
 
-[1] Kothapalli, V., Rasromani, E., & Awatramani, V. (2023). Neural Collapse: A Review on Modelling Principles and Generalization. *Trans. Mach. Learn. Res.*
+[1] Kothapalli, V., Rasromani, E., & Awatramani, V. (2023). Neural Collapse: A Review on Modelling Principles and Generalization. _Trans. Mach. Learn. Res._
 
-[2] Bertinetto, L., et al. (2020). Making Better Mistakes: Leveraging Class Hierarchies With Deep Networks. *CVPR*, 12503-12512.
+[2] Bertinetto, L., et al. (2020). Making Better Mistakes: Leveraging Class Hierarchies With Deep Networks. _CVPR_, 12503-12512.
 
 ## Code & Documentation
 

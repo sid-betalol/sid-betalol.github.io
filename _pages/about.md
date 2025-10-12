@@ -30,7 +30,7 @@ latest_posts:
 
 I am a Machine Learning Research Engineer at [**Entalpic**](https://entalpic.ai/), where I work with [Victor Schmidt (CTO)](https://vict0rs.ch/) and [Alexandre Duval (CSO)](https://alexduvalinho.github.io/) on building a unified platform for materials discovery and pushing the boundaries of AI4Science to address climate change. My work involves developing **generative models** for inorganic crystal and material generation, designing **evaluation methods** and benchmarks for scientific generation tasks, and building **LLM-based agentic systems** to assist in synthesis planning and multi-modal scientific workflows.
 
-Prior to joining Entalpic, I completed a dual degree in **Data Science** and **Biological Engineering** at the [**Indian Institute of Technology (IIT) Madras**](https://www.iitm.ac.in/) in July 2024. My thesis—**Enhancing Protein Fitness with Deep Learning**—was co-advised by [Dr. Krishna Mahadevan (University of Toronto)](https://chem-eng.utoronto.ca/faculty-staff/faculty-members/radhakrishnan-mahadevan/) and [Dr. Nirav Bhatt (IIT Madras)](https://biotech.iitm.ac.in/innerfaculty.php?fname=Nirav%20P%20Bhatt), and was nominated for the *Best Thesis in Data Science Award* at IIT Madras. The work was presented as a poster at [MLCB 2024](https://sites.google.com/cs.washington.edu/mlcb2024/).
+Prior to joining Entalpic, I completed a dual degree in **Data Science** and **Biological Engineering** at the [**Indian Institute of Technology (IIT) Madras**](https://www.iitm.ac.in/) in July 2024. My thesis—**Enhancing Protein Fitness with Deep Learning**—was co-advised by [Dr. Krishna Mahadevan (University of Toronto)](https://chem-eng.utoronto.ca/faculty-staff/faculty-members/radhakrishnan-mahadevan/) and [Dr. Nirav Bhatt (IIT Madras)](https://biotech.iitm.ac.in/innerfaculty.php?fname=Nirav%20P%20Bhatt), and was nominated for the _Best Thesis in Data Science Award_ at IIT Madras. The work was presented as a poster at [MLCB 2024](https://sites.google.com/cs.washington.edu/mlcb2024/).
 
 In the summer of 2023, I was a research intern in [Dr. Mahadevan's lab](https://lmse.utoronto.ca/) through the [**MITACS Globalink Research Fellowship**](https://www.mitacs.ca/our-programs/globalink-research-internship-students/), where I focused on fine-tuning large protein language models for enzyme activity prediction. Earlier, in 2022, I interned at [Dr. David Baker’s lab](https://www.bakerlab.org/) at the University of Washington through the [**Institute for Protein Design Summer Fellowship**](https://www.ipd.uw.edu/undergraduate-research/), working on **GNNs** and **transformer architectures** for inverse folding.
 
@@ -50,14 +50,15 @@ I also care about **data-centric AI**, particularly in low-resource or underrepr
 
 I actively contribute to open-source and open-science efforts across several communities:
 
-**🔹 [LeMaterial](https://lematerial.org/) (Entalpic ⚛️ x HuggingFace 🤗)**: 
+**🔹 [LeMaterial](https://lematerial.org/) (Entalpic ⚛️ x HuggingFace 🤗)**:
+
 - Led the development of [**LeMat-GenBench**](https://github.com/LeMaterial/lemat-genbench) — the first evaluation benchmark for generative models for inorganic crystals.
 - Co-led [**LeMat-Synth**](https://github.com/LeMaterial/lematerial-llm-synthesis), a multimodal agentic library for extracting synthesis recipes and reaction performance data from literature and plots, resulting in a high-quality curated dataset.
 
-**🔹 [ML Collective](https://mlcollective.org/)**: 
-- Worked with [Stefan Larson (Vanderbilt)](https://gxlarson.github.io/) on identifying label noise and train–test overlaps in the RVL-CDIP dataset, and on generating realistic synthetic data for PII replacement in the IIT-CDIP corpus.  
-- Collaborated with [Dr. Chirag Agarwal (UVA)](https://chirag-agarwall.github.io/) and [Dr. Guadalupe Gonzalez (Genentech)](https://www.guadalupegonzalez.io/) on studying **out-of-distribution (OOD) performance** as a proxy for **explanation quality** in GNNs.
+**🔹 [ML Collective](https://mlcollective.org/)**:
 
+- Worked with [Stefan Larson (Vanderbilt)](https://gxlarson.github.io/) on identifying label noise and train–test overlaps in the RVL-CDIP dataset, and on generating realistic synthetic data for PII replacement in the IIT-CDIP corpus.
+- Collaborated with [Dr. Chirag Agarwal (UVA)](https://chirag-agarwall.github.io/) and [Dr. Guadalupe Gonzalez (Genentech)](https://www.guadalupegonzalez.io/) on studying **out-of-distribution (OOD) performance** as a proxy for **explanation quality** in GNNs.
 
 **🔹 Hugging Face Science**  
 Contributing to **Deep Critical**, an agentic architecture for autonomous scientific discovery workflows.
@@ -66,7 +67,6 @@ Contributing to **Deep Critical**, an agentic architecture for autonomous scient
 Member of the Open Science Community.
 
 ---
-
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 

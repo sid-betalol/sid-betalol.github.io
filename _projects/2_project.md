@@ -44,6 +44,7 @@ Developed an end-to-end sequence-to-function learning pipeline for predicting en
 ## Impact
 
 This work laid the foundation for:
+
 - Understanding the importance of structural information in protein function prediction
 - Developing modular pipelines for protein ML research
 - Subsequent thesis work on sequence-structure fusion

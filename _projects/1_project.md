@@ -10,7 +10,7 @@ related_publications: betala2024mlcb
 
 > **Dual Degree Thesis** | August 2023 - June 2024  
 > Guides: Dr. Radhakrishnan Mahadevan (University of Toronto), Dr. Nirav Bhatt (IIT Madras)  
-> *Nominated for Best Thesis in Data Science Award*
+> _Nominated for Best Thesis in Data Science Award_
 
 ## Overview
 
@@ -104,6 +104,7 @@ Our approach for designing enhanced protein variants:
 ## Impact
 
 This work demonstrates that combining protein language models with graph neural networks can:
+
 - Accurately predict function from sequence and structure
 - Generate novel sequences with enhanced properties
 - Significantly reduce experimental validation costs through computational screening

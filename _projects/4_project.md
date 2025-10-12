@@ -15,6 +15,7 @@ github: https://github.com/sid-betalol/Document-Classification-Models
 ## Problem Statement
 
 RVL-CDIP is a widely-used document classification benchmark with 400,000 images across 16 classes. However, the dataset suffers from:
+
 - Significant label errors affecting model evaluation
 - Train-test overlap compromising benchmark integrity
 - Lack of cleaned version for fair model comparison
@@ -24,6 +25,7 @@ RVL-CDIP is a widely-used document classification benchmark with 400,000 images 
 ### 1. Label Error Detection & Correction
 
 **Approach**: CLIP-based outlier detection
+
 - Generated **CLIP embeddings** for all documents
 - Computed class centroids in embedding space
 - Identified outliers based on **distance from centroids**
@@ -34,16 +36,19 @@ RVL-CDIP is a widely-used document classification benchmark with 400,000 images 
 **Multi-stage pipeline**:
 
 **Stage 1 - Feature Matching**:
+
 - Employed **SuperGlue** pre-trained model for feature-based similarity assessment
 - Matched keypoints between document pairs
 - Identified potential duplicates based on match confidence
 
 **Stage 2 - Efficient Similarity Search**:
+
 - Applied **MinHash** and **Locality Sensitive Hashing (LSH)** for efficient grouping
 - Scaled to 400K documents without exhaustive pairwise comparison
 - Generated candidate duplicate groups
 
 **Stage 3 - Refined Clustering**:
+
 - Used **DBSCAN** on candidate groups for accurate deduplication
 - Separated true duplicates from near-duplicates
 - Maintained document diversity while removing overlaps
@@ -51,6 +56,7 @@ RVL-CDIP is a widely-used document classification benchmark with 400,000 images 
 ### 3. Model Evaluation on Cleaned Data
 
 Designed comprehensive evaluation scripts for state-of-the-art models:
+
 - **DiT** (Document Image Transformer)
 - **Donut** (OCR-free document understanding)
 - **LayoutLM** (multimodal document model)

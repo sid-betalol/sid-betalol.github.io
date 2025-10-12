@@ -27,11 +27,13 @@ Investigated and improved graph neural network architectures for protein inverse
 ### Performance Improvements
 
 **Data Augmentation Strategy**:
+
 - Augmented training set with **AlphaFold-predicted structures**
 - Trained with **noisy backbone coordinates** to improve robustness
 - Demonstrated **improved generalization** to unseen protein families
 
 **Pre-training Approach**:
+
 - Implemented **BERT-style pre-training** for ProteinMPNN
 - Objective: reconstruct masked sequences given input structure
 - Showed **competitive performance** with pre-trained models on downstream tasks
@@ -47,8 +49,9 @@ Investigated and improved graph neural network architectures for protein inverse
 **Architecture**: Message Passing Neural Network (MPNN) encoder with self-attention and feedforward layers for neighborhood aggregation, autoregressive decoder for sequence generation
 
 **Key Techniques**:
+
 - Graph construction from backbone coordinates
-- Edge features from pairwise distances and orientations  
+- Edge features from pairwise distances and orientations
 - Autoregressive decoding with temperature sampling
 
 **Frameworks**: PyTorch, PyTorch Geometric
@@ -56,6 +59,7 @@ Investigated and improved graph neural network architectures for protein inverse
 ## Impact
 
 This research:
+
 - Validated the effectiveness of ProteinMPNN architecture
 - Introduced practical improvements through data augmentation
 - Provided insights into graph sparsity and pre-training for protein design
