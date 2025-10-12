@@ -109,7 +109,7 @@ ninja.data = [{
           section: "News",},{id: "news-team-igem-iit-madras-received-the-unique-idea-award-at-the-national-bioengineering-conference-2022-proud-of-our-innovative-approach-to-sustainable-bioengineering",
           title: '🏆 Team iGEM IIT Madras received the Unique Idea Award at the National...',
           description: "",
-          section: "News",},{id: "news-incredibly-excited-to-be-selected-for-the-ipd-summer-research-fellowship-at-baker-lab-university-of-washington-under-nobel-laureate-dr-david-baker-will-be-working-on-deep-learning-for-protein-inverse-folding",
+          section: "News",},{id: "news-incredibly-excited-to-be-selected-for-the-ipd-summer-research-fellowship-at-baker-lab-university-of-washington-under-dr-david-baker-will-be-working-on-deep-learning-for-protein-inverse-folding",
           title: 'Incredibly excited to be selected for the IPD Summer Research Fellowship at Baker...',
           description: "",
           section: "News",},{id: "news-started-my-research-fellowship-at-baker-lab-ipd-university-of-washington-looking-forward-to-exploring-graph-neural-networks-and-transformers-for-protein-design",
