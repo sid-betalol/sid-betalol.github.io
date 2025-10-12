@@ -1,81 +1,49 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Deep Learning for Enzyme Activity Prediction
+description: Sequence-to-function learning pipeline using protein language models
+img: assets/img/projects/mitacs logo.png
 importance: 2
-category: work
-giscus_comments: true
+category: research
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+> **MITACS Globalink Research Internship** | May - August 2023  
+> Laboratory for Metabolic Systems Engineering, University of Toronto  
+> Supervisor: Dr. Krishna Mahadevan
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Project Overview
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Developed an end-to-end sequence-to-function learning pipeline for predicting enzyme activity from protein sequences, achieving state-of-the-art performance with R-Score of 0.71 on mutation datasets.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Key Achievements
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Pipeline Development
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+- Designed **flexible, modular pipeline** supporting multiple Protein Language Models (PLMs)
+- Implemented end-to-end workflow from data preprocessing to prediction with minimal configuration
+- Enabled easy experimentation with different model architectures and hyperparameters
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### Model Performance
 
-{% raw %}
+- Employed **ESM-2** to generate high-quality sequence embeddings for three point-mutation datasets
+- Benchmarked multiple architectures: **LSTM-VAEs, convolutional pooling, and self-attention mechanisms**
+- Achieved **R-Score of 0.71** on enzyme activity prediction tasks
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+### Key Insights
 
-{% endraw %}
+- Identified **lack of structural information** as the primary bottleneck in predictive performance
+- This insight motivated the thesis work on integrating structure with sequence via GNNs
+- Demonstrated competitive performance of attention-based pooling at similar parameter sizes
+
+## Technical Stack
+
+**Models**: ESM-2, LSTM-VAE, Convolutional Networks, Self-Attention  
+**Frameworks**: PyTorch, Hugging Face Transformers  
+**Datasets**: Three enzyme point-mutation datasets with measured activity values
+
+## Impact
+
+This work laid the foundation for:
+- Understanding the importance of structural information in protein function prediction
+- Developing modular pipelines for protein ML research
+- Subsequent thesis work on sequence-structure fusion

@@ -1,80 +1,83 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
-importance: 3
-category: fun
+title: AI for Green Finance
+description: 3rd place solution at Temenos Encryptcon hackathon evaluating climate projects
+# img: assets/img/projects/temenos_cover.jpg
+importance: 5
+category: hackathon
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+> **Temenos Encryptcon Hackathon** | January 2024  
+> **Achievement**: 3rd place out of 340 teams across India  
+> **Prize**: $7,500 (Rs. 600,000)
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Challenge
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Build an AI platform to evaluate investment potential of green finance projects using Project Design Documents (PDDs), enabling investors to make data-driven decisions on climate initiatives.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Solution Architecture
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### 1. Multimodal Document Processing
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+**OCR-Free Parsing with Donut**:
+- Processed PDDs containing text, tables, and plots without traditional OCR
+- Enabled **rapid computation** and **semantic understanding**
+- Handled diverse document layouts and formats
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+**Document Embedding Generation**:
+- Created rich representations capturing project characteristics
+- Enabled similarity-based project comparison
+- Facilitated downstream prediction tasks
 
-{% raw %}
+### 2. Predictive Analytics
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+**Carbon Credit Prediction**:
+- Integrated document embeddings with **time series data**
+- Fine-tuned **FLAN-T5** for multi-horizon forecasting
+- Predicted quantity of carbon credits generated over project lifetime
+- Forecasted carbon credit prices for upcoming years
 
-{% endraw %}
+**Risk Assessment**:
+- Developed heuristic comparing new projects against top performers
+- Quantified project risk based on historical success patterns
+- Provided confidence scores for investment decisions
+
+### 3. Retrieval-Augmented Generation (RAG)
+
+**Intelligent Project Filtering**:
+- Implemented RAG for natural language queries
+- Filtered projects based on user preferences (geography, technology, scale)
+- Presented **top 3 gainers and losers** based on predicted returns
+
+**Interactive Q&A**:
+- Enabled users to ask questions about specific projects
+- Retrieved relevant information from PDD corpus
+- Provided evidence-based answers with source citations
+
+## Key Features
+
+✅ **Upload & Analysis**: Instant evaluation of new PDDs  
+✅ **Comparative Analytics**: Benchmark against successful projects  
+✅ **Time Series Forecasting**: Predict returns over 5-10 year horizon  
+✅ **Risk Scoring**: Quantified investment risk metrics  
+✅ **Natural Language Interface**: Query projects conversationally
+
+## Technical Stack
+
+**Document Understanding**: Donut (OCR-free)  
+**Language Model**: FLAN-T5  
+**RAG Framework**: LangChain  
+**Experiment Tracking**: Weights & Biases  
+**Frontend**: Gradio  
+**Backend**: Python, PyTorch, Hugging Face
+
+## Impact
+
+- Reduced due diligence time from days to minutes
+- Democratized access to green finance analytics
+- Enabled data-driven investment decisions in climate tech
+
+
+## Team Insights
+
+> "The key challenge was handling multimodal PDDs with inconsistent formats. Donut's transformer-based approach eliminated brittle OCR pipelines, while FLAN-T5's instruction-following capability made it ideal for integrating diverse data sources."

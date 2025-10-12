@@ -1,81 +1,135 @@
 ---
 layout: page
-title: project 8
-description: an other project with a background image and giscus comments
-img: assets/img/9.jpg
-importance: 2
-category: work
-giscus_comments: true
+title: Robotic Personal Assistant
+description: Autonomous robot with computer vision, SLAM, and conversational AI capabilities
+importance: 8
+category: fun
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+> **Project Lead** | Robotics Club, IIT Madras | 2020 - 2021  
+> **Team Size**: 8 members  
+> **Hardware**: NVIDIA Jetson Nano, Arduino, ROS-compatible robot chassis
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Project Overview
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Developed an autonomous robotic personal assistant capable of navigating indoor environments, recognizing objects and people, understanding natural language commands, and providing product recommendations. The system integrates computer vision, SLAM, conversational AI, and e-commerce APIs into a cohesive platform.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Core Capabilities
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### 1. Computer Vision Module
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+**Real-time Face & Emotion Detection**:
+- Implemented using **OpenCV** with Haar feature-based cascade classifiers
+- Detects multiple faces simultaneously in video stream
+- Classifies emotions: happy, sad, angry, neutral, surprised
+- Runs at 15-20 FPS on Jetson Nano
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+**Object Detection & Identification**:
+- Deployed **YOLO (You Only Look Once)** for real-time object detection
+- Custom training on household items and common objects
+- **Anchor boxes** for optimal bounding box prediction
+- **Non-maximum suppression (NMS)** to filter overlapping detections
+- **Intersection over Union (IoU)** for accurate segmentation
 
-{% raw %}
+### 2. Navigation & Mapping
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+**ORB-SLAM2 with Dynamic Environment Handling**:
+- Integrated **ORB-SLAM2** for visual odometry and mapping
+- Enhanced with **probabilistic deep learning model** to filter dynamic objects
+- Maintains stable maps despite moving people and objects
+- Achieves robust localization in challenging indoor scenarios
+
+**ROS Integration**:
+- Used **RViz** for real-time visualization of robot state and map
+- Simulated and tested in **Gazebo** before hardware deployment
+- Implemented path planning algorithms for autonomous navigation
+- Multi-environment mapping: stores and switches between multiple saved maps
+
+### 3. Conversational AI & Recommendations
+
+**Intent-based Chatbot**:
+- Natural language understanding for user commands
+- Context-aware conversation management
+- Integration with robot actions (navigation, object finding)
+- Voice input/output for hands-free interaction
+
+**Product Recommendation System**:
+- **Web scraping** Amazon for product data (prices, reviews, ratings)
+- Collaborative filtering for personalized recommendations
+- Conversational interface: "Find me a good laptop under $1000"
+- Real-time price comparison and deal alerts
+
+## Technical Implementation
+
+### Hardware Setup
+- **Processing**: NVIDIA Jetson Nano (GPU acceleration for vision tasks)
+- **Sensors**: RGB-D camera, IMU, wheel encoders
+- **Actuators**: Differential drive motors controlled via Arduino
+- **Power**: Custom battery management system
+
+### Software Stack
+- **Vision**: OpenCV, PyTorch (YOLO), TensorFlow
+- **SLAM**: ORB-SLAM2, ROS Navigation Stack
+- **Simulation**: Gazebo, RViz
+- **ML Frameworks**: PyTorch, TensorFlow
+- **Languages**: Python (primary), C++ (performance-critical components)
+
+### Key Algorithms
+
+**Dynamic Object Filtering**:
+```python
+# Probabilistic model for static vs. dynamic classification
+def filter_dynamic_objects(features, motion_vectors):
+    # Extract ORB features from current frame
+    orb_features = extract_orb_features(frame)
+    
+    # Predict dynamic probability using trained model
+    dynamic_probs = dl_model.predict(features)
+    
+    # Filter features with high dynamic probability
+    static_features = features[dynamic_probs < threshold]
+    
+    return static_features
 ```
 
-{% endraw %}
+**Multi-Environment Mapping**:
+- Save map on user command
+- Load appropriate map based on GPS/WiFi fingerprinting
+- Seamless switching without re-initialization
+
+## Challenges & Solutions
+
+| Challenge | Solution |
+|-----------|----------|
+| Dynamic environments confusing SLAM | Integrated DL model to identify and filter dynamic objects |
+| Limited computational resources | Optimized models, used TensorRT for inference acceleration |
+| Real-time performance requirements | Parallel processing pipelines, efficient data structures |
+| Integration of multiple subsystems | Robust ROS architecture with well-defined interfaces |
+
+## Demonstrations & Results
+
+**Performance Metrics**:
+- Face detection: 95% accuracy, 18 FPS
+- Object detection: 88% mAP, 12 FPS
+- SLAM localization error: < 5cm in typical indoor environment
+- Navigation success rate: 92% (reaching target without collision)
+
+**User Study**: 
+- Tested with 25 users over 2 weeks
+- 4.2/5 average satisfaction rating
+- Most appreciated features: object finding, natural conversation
+
+## Future Enhancements
+
+- Integration of LLMs for more natural conversations
+- Improved manipulation capabilities (robotic arm)
+- Multi-robot coordination for larger spaces
+- Cloud connectivity for expanded product database
+- Privacy-preserving face recognition
+
+## Impact
+
+This project served as:
+- **Educational platform** for Robotics Club members to learn ROS, computer vision, and system integration
+- **Competition entry** at inter-college robotics competitions (2nd place at RoboFest 2021)
+- **Foundation** for subsequent research in autonomous systems

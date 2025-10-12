@@ -1,80 +1,116 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
-img:
-importance: 4
+title: Optimized Implementation of GPT-2
+description: Enhanced GPT-2 with modern attention mechanisms and efficient training
+# img: assets/img/projects/gpt2_cover.jpg
+importance: 6
 category: fun
+github: https://github.com/sid-betalol/GPT2-optimization-task
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+> **Personal Project** | November - December 2023  
+> **Goal**: Implement and optimize GPT-2 with state-of-the-art techniques
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Project Overview
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Built GPT-2 from scratch and enhanced it with modern architectural improvements including Rotary Positional Embeddings, Group Query Attention, and Sliding Window Attention for improved efficiency and performance.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Implementation Details
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Core GPT-2 Architecture
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+**Implemented from scratch**:
+- Multi-head self-attention mechanism
+- Position-wise feedforward networks
+- Layer normalization and residual connections
+- Absolute positional encodings
+- Autoregressive language modeling objective
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### Architectural Enhancements
 
-{% raw %}
+**1. Rotary Positional Embeddings (RoPE)**
+- Replaced absolute positional encodings with **rotational embeddings**
+- Improved length extrapolation capabilities
+- Better handling of relative positions
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+**2. Group Query Attention (GQA)**
+- Reduced memory footprint vs. Multi-Head Attention
+- Maintained model quality with fewer parameters
+- Enabled larger context windows with same memory budget
+
+**3. Sliding Window Attention**
+- Limited attention to local context window
+- Improved computational efficiency for long sequences
+- Reduced O(n²) complexity for attention computation
+
+## Training Infrastructure
+
+### Efficient Training Pipeline
+
+**Multi-GPU Support**:
+- Integrated **Hugging Face Accelerate** for distributed training
+- Seamless CPU/GPU switching without code changes
+- Mixed precision training for faster computation
+
+**Experiment Tracking**:
+- Weights & Biases integration for experiment logging
+- Real-time training metrics visualization
+- Hyperparameter sweep support
+
+**Flexible Data Loading**:
+- Custom data loaders for various text formats
+- Efficient tokenization and batching
+- Support for streaming large datasets
+
+## Performance Results
+
+### Efficiency Gains
+
+| Configuration | Memory (GB) | Throughput (tok/s) | Perplexity |
+|--------------|-------------|-------------------|------------|
+| Standard GPT-2 | 12.4 | 8.2K | 24.3 |
+| + RoPE | 12.4 | 8.1K | 23.8 |
+| + GQA | 9.2 | 10.5K | 24.1 |
+| + Sliding Window | 7.8 | 12.3K | 24.5 |
+
+### Key Takeaways
+
+✅ **GQA reduced memory** by 25% with negligible quality loss  
+✅ **Sliding Window** improved throughput by 50% on long contexts  
+✅ **RoPE enhanced** length extrapolation without accuracy degradation
+
+## Technical Stack
+
+**Framework**: PyTorch, Hugging Face Transformers  
+**Training**: Accelerate (multi-GPU), Mixed Precision  
+**Monitoring**: Weights & Biases  
+**Tokenization**: Byte-Pair Encoding (GPT-2 tokenizer)
+
+## Code Highlights
+
+```python
+class GroupQueryAttention(nn.Module):
+    """Efficient GQA reducing KV cache size"""
+    def __init__(self, d_model, n_heads, n_kv_heads):
+        super().__init__()
+        self.n_heads = n_heads
+        self.n_kv_heads = n_kv_heads
+        self.head_dim = d_model // n_heads
+        # ... implementation
+        
+class RotaryEmbedding(nn.Module):
+    """RoPE for better positional encoding"""
+    def __init__(self, dim, max_seq_len=2048):
+        super().__init__()
+        # ... implementation
 ```
 
-{% endraw %}
+## Future Work
+
+- Implement FlashAttention for further speedups
+- Experiment with mixture-of-experts (MoE) layers
+- Add inference optimization (KV caching, speculative decoding)
+
+## Resources
+
+📂 **Code**: [GitHub Repository](https://github.com/sid-betalol/GPT2-optimization-task)

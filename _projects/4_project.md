@@ -1,80 +1,76 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
-importance: 3
-category: fun
+title: Revisiting RVL-CDIP
+description: Fixing label errors and train-test overlap in document classification benchmark
+img: assets/img/projects/rvl_cdip_cover.png
+importance: 4
+category: research
+github: https://github.com/sid-betalol/Document-Classification-Models
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+> **Collaboration**: Stefan Larson (Vanderbilt University)  
+> **Status**: Under ACL Rolling Review for EACL 2026  
+> **Period**: 2023 - Present
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Problem Statement
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+RVL-CDIP is a widely-used document classification benchmark with 400,000 images across 16 classes. However, the dataset suffers from:
+- Significant label errors affecting model evaluation
+- Train-test overlap compromising benchmark integrity
+- Lack of cleaned version for fair model comparison
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Our Solution
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### 1. Label Error Detection & Correction
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+**Approach**: CLIP-based outlier detection
+- Generated **CLIP embeddings** for all documents
+- Computed class centroids in embedding space
+- Identified outliers based on **distance from centroids**
+- Manual verification and relabeling of suspicious samples
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### 2. Train-Test Duplicate Detection
 
-{% raw %}
+**Multi-stage pipeline**:
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+**Stage 1 - Feature Matching**:
+- Employed **SuperGlue** pre-trained model for feature-based similarity assessment
+- Matched keypoints between document pairs
+- Identified potential duplicates based on match confidence
 
-{% endraw %}
+**Stage 2 - Efficient Similarity Search**:
+- Applied **MinHash** and **Locality Sensitive Hashing (LSH)** for efficient grouping
+- Scaled to 400K documents without exhaustive pairwise comparison
+- Generated candidate duplicate groups
+
+**Stage 3 - Refined Clustering**:
+- Used **DBSCAN** on candidate groups for accurate deduplication
+- Separated true duplicates from near-duplicates
+- Maintained document diversity while removing overlaps
+
+### 3. Model Evaluation on Cleaned Data
+
+Designed comprehensive evaluation scripts for state-of-the-art models:
+- **DiT** (Document Image Transformer)
+- **Donut** (OCR-free document understanding)
+- **LayoutLM** (multimodal document model)
+
+Compared performance on original vs. cleaned dataset to quantify impact of data quality issues.
+
+## Technical Stack
+
+**Similarity & Embeddings**: OpenAI CLIP, SuperGlue  
+**Hashing**: MinHash, LSH  
+**Clustering**: DBSCAN  
+**Models Evaluated**: DiT, Donut, LayoutLM  
+**Frameworks**: PyTorch, Hugging Face Transformers, OpenCV
+
+## Impact
+
+- **Cleaned dataset** available for research community
+- **Quantified impact** of data quality on model performance
+- Established good practices for large-scale document dataset curation
+
+<!-- ## Related Publications
+
+{% cite larson2026rvl-cdip %} -->

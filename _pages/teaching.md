@@ -2,11 +2,27 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: Courses and workshops I have taught or assisted with.
 nav: true
 nav_order: 6
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+## Teaching Assistant
 
-Organize your courses by years, topics, or universities, however you like!
+**Life Sciences** (2024)  
+*Computational Biology Introduction*  
+- Taught introductory computational biology concepts
+- Created and evaluated exams
+- Developed coding tutorials for students
+
+**Evolutionary Biology** (2024)  
+- Assisted with course instruction
+- Created and evaluated exams
+- Developed coding tutorials
+
+## Primary Instructor
+
+**CFI Summer School for Robotics** (2022)  
+- Primary instructor for programming and machine learning in robotics
+- Designed curriculum and course materials
+- Led hands-on workshops and projects
