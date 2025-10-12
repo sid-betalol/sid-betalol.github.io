@@ -13,16 +13,16 @@ nav_order: 6
 _Computational Biology Introduction_
 
 - Under [Dr. V Kesavan](https://sites.google.com/view/chemical-biology-lab/)
-- Taught introductory computational biology concepts
+- Taught an introduction to computational biology concepts class
 - Created and evaluated exams
 - Developed coding tutorials for students
 
 **BT3032: Evolutionary Biology, IIT Madras** (2024)
 
 - Under [Dr. Himanshu Sinha](https://home.iitm.ac.in/sinha/)
-- Assisted with course instruction
-- Created and evaluated exams
-- Developed coding tutorials
+- Assisted with course instruction and evaluation  
+- Designed and graded examinations  
+- Developed coding tutorials and auto-graded programming assignments
 
 ## Primary Instructor
 
