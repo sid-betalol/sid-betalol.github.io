@@ -2,7 +2,7 @@
 layout: page
 title: personal
 permalink: /personal/
-description: Bits of life beyond the research papers.
+description: Bits of life beyond research.
 nav: true
 nav_order: 7
 ---
