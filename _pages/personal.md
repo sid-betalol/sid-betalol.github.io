@@ -9,7 +9,7 @@ nav_order: 7
 
 ### 🎨 Beyond Research
 
-I enjoy **photography** 📸, **hiking** 🥾, **running 5Ks** 🏃, **thriller movies** 🎬, **anime** 🎌, and **story-rich video games** 🎮 — favorites include [_L.A. Noire_](https://en.wikipedia.org/wiki/L.A._Noire) and [_Heavy Rain_](https://en.wikipedia.org/wiki/Heavy_Rain). I also enjoy music 🎵 and can spend hours deep-diving into conversations about **sports**, **finance**, **history**, **politics**, and **entrepreneurship**.
+I enjoy **photography** 📸, **hiking** 🥾, **running 5Ks** 🏃, **thriller movies** 🎬, **anime** 🎌, and **story-rich video games** 🎮 — favorites include [_L.A. Noire_](https://en.wikipedia.org/wiki/L.A._Noire) and [_Heavy Rain_](https://en.wikipedia.org/wiki/Heavy_Rain). I hope to play [_Hogwarts Legacy_](https://en.wikipedia.org/wiki/Hogwarts_Legacy) soon, in particular to re-create [this scene](https://youtube.com/shorts/sBPkdINZ30g?si=cc72oCaPMCxxw3B-). I also enjoy music 🎵 and can spend hours deep-diving into conversations about **sports**, **finance**, **history**, **politics**, and **entrepreneurship**.
 
 I claim to know some languages — fluent in **Hindi**, **English**, **Marwari**, and **Odia**, and fluent-in-the-shower in **Japanese** 🇯🇵 and **Spanish** 🇪🇸.
 
