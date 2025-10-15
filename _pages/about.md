@@ -26,7 +26,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-### 👨‍🔬 About Me
+### About Me
 
 I am a Machine Learning Research Engineer at [**Entalpic**](https://entalpic.ai/), where I work with [Victor Schmidt (CTO)](https://vict0rs.ch/) and [Alexandre Duval (CSO)](https://alexduvalinho.github.io/) on building a unified platform for materials discovery and pushing the boundaries of AI4Science to address climate change. My work involves developing **generative models** for inorganic crystal and material generation, designing **evaluation methods** and benchmarks for scientific generation tasks, and building **LLM-based agentic systems** to assist in synthesis planning and multi-modal scientific workflows.
 
@@ -38,7 +38,7 @@ Throughout my undergraduate years, I was actively involved in the institute’s 
 
 ---
 
-### 🧪 Research Interests
+### Research Interests
 
 I am interested in using **AI to accelerate scientific discovery** — particularly in **biological design**, **materials science**, and **drug discovery**. I’m excited about **generative modelling**, **scientific agent systems**, and building tools that improve iteration speed and steerability for experimental scientists.
 
@@ -46,7 +46,7 @@ I also care about **data-centric AI**, particularly in low-resource or underrepr
 
 ---
 
-### 🤝 Open Science and Community Involvement
+### Open Science and Community Involvement
 
 I actively contribute to open-source and open-science efforts across several communities:
 
