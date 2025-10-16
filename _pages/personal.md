@@ -1,6 +1,6 @@
 ---
 layout: page
-title: personal
+title: Personal
 permalink: /personal/
 description: Bits of life beyond research.
 nav: true

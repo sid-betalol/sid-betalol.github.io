@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Machine Learning Research Engineer at <a href='https://www.entalpic.ai/'>Entalpic</a>
 
