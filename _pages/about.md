@@ -40,7 +40,7 @@ Throughout my undergraduate years, I was actively involved in the institute’s 
 
 ### Research Interests
 
-I am interested in using **AI to accelerate scientific discovery** — particularly in **biological design**, **materials science**, and **drug discovery**. I’m excited about **generative modelling**, **scientific agent systems**, and building tools that improve iteration speed and steerability for experimental scientists.
+I am interested in using **AI to accelerate scientific discovery**, particularly in **biological design**, **materials science**, and **drug discovery**. I’m excited about **generative modelling**, **scientific agent systems**, and building tools that improve iteration speed and steerability for experimental scientists.
 
 I also care about **data-centric AI**, particularly in low-resource or underrepresented settings. My interests in **multilingual and multimodal NLP**, **benchmarking**, **alignment techniques**, and **evaluation methods** stem from a core belief: that impactful AI must be **reliable**, **accessible**, and **inclusive**. A significant part of my current and past work involves building or repairing datasets, identifying biases, and designing metrics that better reflect real-world generalization.
 
