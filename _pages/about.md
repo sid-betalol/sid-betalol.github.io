@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Machine Learning Research Engineer at <a href='https://www.entalpic.ai/'>Entalpic</a>
+subtitle: Machine Learning Scientist at <a href='https://www.entalpic.ai/'>Entalpic</a>
 
 profile:
   align: right
@@ -28,7 +28,7 @@ latest_posts:
 
 ### About Me
 
-I am a Machine Learning Research Engineer at [**Entalpic**](https://entalpic.ai/), where I work with [Victor Schmidt (CTO)](https://vict0rs.ch/) and [Alexandre Duval (CSO)](https://alexduvalinho.github.io/) on building a unified platform for materials discovery and pushing the boundaries of AI4Science to address climate change. My work involves developing **generative models** for inorganic crystal and material generation, designing **evaluation methods** and benchmarks for scientific generation tasks, and building **LLM-based agentic systems** to assist in synthesis planning and multi-modal scientific workflows.
+I am a Machine Learning Scientist (formerly a ML Research Engineer) at [**Entalpic**](https://entalpic.ai/), where I work with [Victor Schmidt (CTO)](https://vict0rs.ch/) and [Alexandre Duval (CSO)](https://alexduvalinho.github.io/) on building a unified platform for materials discovery and pushing the boundaries of AI4Science to address climate change. My work involves developing **generative models** for inorganic crystal and material generation, designing **evaluation methods** and benchmarks for scientific generation tasks, and building **LLM-based agentic systems** to assist in synthesis planning and multi-modal scientific workflows.
 
 Prior to joining Entalpic, I completed a dual degree in **Data Science** and **Biological Engineering** at the [**Indian Institute of Technology (IIT) Madras**](https://www.iitm.ac.in/) in July 2024. My thesis—**Enhancing Protein Fitness with Deep Learning**—was co-advised by [Dr. Krishna Mahadevan (University of Toronto)](https://chem-eng.utoronto.ca/faculty-staff/faculty-members/radhakrishnan-mahadevan/) and [Dr. Nirav Bhatt (IIT Madras)](https://biotech.iitm.ac.in/innerfaculty.php?fname=Nirav%20P%20Bhatt), and was nominated for the _Best Thesis in Data Science Award_ at IIT Madras. The work was presented as a poster at [MLCB 2024](https://sites.google.com/cs.washington.edu/mlcb2024/).
 
