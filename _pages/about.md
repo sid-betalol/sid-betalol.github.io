@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Bengaluru, India</p>
+    <p>Paris, France</p>
     <p>betalas5@gmail.com</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
